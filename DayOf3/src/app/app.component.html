@@ -1,0 +1,60 @@
+<!-- <p *ngIf="user.age >= 18; else under18">{{user.name}}</p>
+
+<ng-template #under18>
+  <div *ngIf="user.age < 18">
+    You are to young
+  </div>
+</ng-template>
+
+<button (click)="user.age = user.age - 1">-</button>
+Age: {{user.age}}
+<button (click)="user.age = user.age + 1">+</button>
+
+<app-hello></app-hello> -->
+
+<ul>
+  <!-- Cách dùng cả if cả for -->
+  <ng-container *ngIf="users.length > 0; else noUser">
+    <li
+      *ngFor="let user of users; index as index; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+      <span>{{user.name}} -- {{user.id}} -- {{user.email}}</span>
+      <br>
+      <span>index is {{index}} out of {{total}}</span>
+      <br>
+      <span *ngIf="isEven">I am even number</span>
+      <br>
+      <span *ngIf="isOdd">I am odd number</span>
+      <br>
+      <span *ngIf="isFirst">I am first number</span>
+      <br>
+      <span *ngIf="isLast">I am last number</span>
+      <hr>
+      <span>Total of user is {{total}}</span>
+    </li>
+  </ng-container>
+  <ng-template #noUser>
+    No user!
+  </ng-template>
+</ul>
+
+<!-- <ul>
+  <ng-template let-user ngFor [ngForOf]="users" let-index="index" let-total="count" let-isFirst="first" let-isLast="last" let-isOdd="odd" let-isEven="even"> 
+    <li>
+      <span>{{user.name}} -- {{user.id}} -- {{user.email}}</span>
+    <br>
+    <span>index is {{index}} out of {{total}}</span>
+    <br>
+    <span *ngIf="isEven">I am even number</span>
+    <br>
+    <span *ngIf="isOdd">I am odd number</span>
+    <br>
+    <span *ngIf="isFirst">I am first number</span>
+    <br>
+    <span *ngIf="isLast">I am last number</span>
+    <hr>
+    <span>Total of user is {{total}}</span>
+    </li>
+  </ng-template>
+</ul> -->
+
+<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button>
