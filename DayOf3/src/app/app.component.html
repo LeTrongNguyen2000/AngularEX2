@@ -12,9 +12,11 @@ Age: {{user.age}}
 
 <app-hello></app-hello> -->
 
+
+<!-- NgFor Structual Directive -->
 <ul>
   <!-- Cách dùng cả if cả for -->
-  <ng-container *ngIf="users.length > 0; else noUser">
+  <!-- <ng-container *ngIf="users.length > 0; else noUser">
     <li
       *ngFor="let user of users; index as index; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
       <span>{{user.name}} -- {{user.id}} -- {{user.email}}</span>
@@ -34,7 +36,7 @@ Age: {{user.age}}
   </ng-container>
   <ng-template #noUser>
     No user!
-  </ng-template>
+  </ng-template> -->
 </ul>
 
 <!-- <ul>
@@ -57,4 +59,31 @@ Age: {{user.age}}
   </ng-template>
 </ul> -->
 
-<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button>
+<!-- <button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button> -->
+<!-- NgFor Structual Directive -->
+
+
+<app-hello></app-hello>
+
+<!-- 
+  - [class.ten-class]
+  - [class]="array"
+  - [class]="object"  "{'ten-class': boolean}"" 
+-->
+
+<button (click)="isDanger = !isDanger">Togger Danger</button> 
+<!-- isDanger là true thì nó là false và ngược lại -->
+<br>
+<button (click)="isWarning = !isWarning">Togger Warning</button>
+<div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div>
+
+<!-- 
+  - [style.tenStyle]
+  - [style.ten-style]
+  - [style.tenStyle.unit]
+  - [style]="object"
+  - [style.css=variable]
+ -->
+ <!-- [style.color]="'white'" [style.background-color]="'gray'" [style.fontSize.rem]="2" -->
+
+ <p [style]="{color: 'red', background: 'gray', fontSize: '2rem'}">06-02-2021</p>

@@ -6,7 +6,8 @@ import { Component, Input } from "@angular/core";
 })
 export class HelloComponent{
 
-    @Input() name: string | undefined;
+    // @Input() name: string | undefined;
+    name = 'Nguyen';
 
     ngOnInit(){
         console.log("Hello init");
