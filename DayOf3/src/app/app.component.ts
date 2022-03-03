@@ -248,6 +248,12 @@ export class AppComponent {
   //   'angular', 'typescript', '100days'
   // ]
 
-  isDanger = true;
-  isWarning = true;
+  // isDanger = true;
+  // isWarning = true;
+
+  progress = '10';
+  backgroundColor = '#ccc';
+  progressColor = 'tomato';
+
+  currentProgress = 70;
 }

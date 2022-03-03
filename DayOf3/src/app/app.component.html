@@ -63,7 +63,8 @@ Age: {{user.age}}
 <!-- NgFor Structual Directive -->
 
 
-<app-hello></app-hello>
+
+<!-- Calss & Style Binding -->
 
 <!-- 
   - [class.ten-class]
@@ -71,11 +72,11 @@ Age: {{user.age}}
   - [class]="object"  "{'ten-class': boolean}"" 
 -->
 
-<button (click)="isDanger = !isDanger">Togger Danger</button> 
+<!-- <button (click)="isDanger = !isDanger">Togger Danger</button>  -->
 <!-- isDanger là true thì nó là false và ngược lại -->
-<br>
+<!-- <br>
 <button (click)="isWarning = !isWarning">Togger Warning</button>
-<div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div>
+<div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div> -->
 
 <!-- 
   - [style.tenStyle]
@@ -86,4 +87,14 @@ Age: {{user.age}}
  -->
  <!-- [style.color]="'white'" [style.background-color]="'gray'" [style.fontSize.rem]="2" -->
 
- <p [style]="{color: 'red', background: 'gray', fontSize: '2rem'}">06-02-2021</p>
+ <!-- <p [style]="{color: 'red', background: 'gray', fontSize: '2rem'}">06-02-2021</p> -->
+
+ <!-- Calss & Style Binding -->
+ <br>
+ <button (click)="currentProgress = currentProgress + 10">Click</button>
+ <br>
+ <progress-bar></progress-bar>
+ <br>
+ <progress-bar [progress]="currentProgress"></progress-bar>
+ <br>
+ <progress-bar [progress]="currentProgress" [progressColor]="'blue'"></progress-bar>
